@@ -26,6 +26,7 @@ if people == dogs:
     print("People are dogs!")
 
 
-
+if people == dogs:
+    raise ValueError("Equality for canines")
 
     
