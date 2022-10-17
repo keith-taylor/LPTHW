@@ -21,23 +21,34 @@ cities = {
 }
 
 
-#print(cities)
-
-# print('-' * 10)
-# print("NY State has: ", cities['NY'])
-# print("OR State has: ", cities['OR'])
-
-# print('-' * 10)
-# print("Michegan's abbreviation is: ", states['Michegan'])
-# print("Florida's abbreviation is: ", states['Florida'])
-
-# print('-' * 10)
-# print("Michegan has: ", cities[states['Michegan']])
-# print("Florida has: ", cities[states['Florida']])
-
-
 for each_state in states:
-    cities_list = []
-    for each_city in cities[states[each_state]]:
-        cities_list.append(each_city)
-    print(f"These are the listed cities for {each_state} state: {', '.join(cities_list)}. ")
+    if len(cities[states[each_state]]) == 1:
+        print(f"There is only one city listed in {each_state} [{states[each_state]}]: {', '.join(cities[states[each_state]])}.  ")
+        
+    else:
+        print(f"There are {len(cities[states[each_state]])} cities listed in {each_state} [{states[each_state]}]: {', '.join(cities[states[each_state]])}. ")
+
+
+
+print("\n")
+
+home_nations = {
+    'Scotland': 'Sco',
+    'England': 'Eng',
+    'Wales': 'Wal',
+    'Northern Ireland': 'NIr'
+    }
+
+uk_cities = {
+    'Sco': ["Glasgow", "Edinburgh", "Aberdeen", "Stirling"], 
+    'Eng': ["London", "Manchestor", "Birmingham", "Leeds"], 
+    'Wal': ["Cardiff", "Swansea"], 
+    'NIr': ["Belfast"]
+}
+for country in home_nations:
+    if len(uk_cities[home_nations[country]]) == 1:
+        print(f"There is only one city listed in {country}: {', '.join(uk_cities[home_nations[country]])}.  ")
+        
+    else:
+        print(f"There are {len(uk_cities[home_nations[country]])} cities listed in {country}: {', '.join(uk_cities[home_nations[country]])}. ")
+
